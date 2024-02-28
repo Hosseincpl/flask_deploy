@@ -1,7 +1,17 @@
+@font-face {
+  font-family: 'Vazir';
+  src: url('path/to/Vazir-Regular.woff2') format('woff2'),
+    /* specify the path to your font files */
+    url('path/to/Vazir-Regular.woff') format('woff');
+  /* include additional formats if available */
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
     background: #fafafa;
     color: #333333;
-    margin-top: 5rem;
+    margin-top: 3rem;
   }
   
   h1, h2, h3, h4, h5, h6 {

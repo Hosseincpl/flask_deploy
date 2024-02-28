@@ -1,12 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="content-section">
+<html lang="fa-ir" , dir="rtl">
+    <div class="content-section" style="text-align: right;">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Today</legend>
+                <legend class="border-bottom mb-4">ثبت نام کاربران</legend>
                 <div class="form-group">
-                    {{ form.username.label(class="form-control-label") }}
+                    <!-- {{ form.username.label(class="form-control-label") }} -->
+                    <span>نام کاربری</span>
 
                     {% if form.username.errors %}
                         {{ form.username(class="form-control form-control-lg is-invalid") }}
@@ -20,7 +22,8 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.email.label(class="form-control-label") }}
+                    <!-- {{ form.email.label(class="form-control-label") }} -->
+                    <span>ایمیل</span>
                     {% if form.email.errors %}
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -33,7 +36,8 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }}
+                    <!-- {{ form.password.label(class="form-control-label") }} -->
+                    <span>رمز عبور</span>
                     {% if form.password.errors %}
                         {{ form.password(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -46,7 +50,8 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.confirm_password.label(class="form-control-label") }}
+                    <!-- {{ form.confirm_password.label(class="form-control-label") }} -->
+                    <span>تکرار رمز عبور</span>
                     {% if form.confirm_password.errors %}
                         {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -60,13 +65,14 @@
                 </div>
             </fieldset>
             <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-outline-info" , value="ثبت نام") }}
             </div>
         </form>
     </div>
     <div class="border-top pt-3">
-        <small class="text-muted">
-            Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
+        <small class="text-muted" style="float: right;">
+            آیا حساب کاربری ندارید ؟ <a class="ml-2" href="{{ url_for('login') }}">ثبت نام</a>
         </small>
     </div>
+    </html>
 {% endblock content %}

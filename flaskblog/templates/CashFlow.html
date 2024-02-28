@@ -1,0 +1,630 @@
+{% extends "layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="fa-ir" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Table with Sticky Header</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .title {
+            font-weight: bold;
+            background-color: lightblue;
+        }
+        table {
+
+    width: 80%; /* Adjust the width of the table as needed */
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+
+.title {
+    background-color: #f2f2f2; /* Gray background for title rows */
+}
+
+/* Apply alternate row colors for better readability */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f2f2f2; /* Light gray background color on hover */
+}
+
+/* Style the editable cells */
+td[contenteditable="true"] {
+    background-color: #ffffff; /* White background color */
+    outline: none; /* Remove outline when editing */
+    cursor: text; /* Change cursor to text when editing */
+}
+
+/* Apply some padding to the editable cells for better spacing */
+td[contenteditable="true"] {
+    padding: 6px;
+}
+
+/* Apply special styles to the first column */
+td:first-child {
+    font-weight: bold;
+    background-color: #f2f2f2; /* Gray background color */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+
+.title {
+    background-color: #f2f2f2; /* Gray background for title rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row background color for better readability */
+}
+
+thead tr {
+    position: sticky; /* Make the first row sticky */
+    top: 0; /* Stick it to the top */
+    background-color: white; /* Background color of the sticky row */
+    z-index: 1; /* Ensure it stays on top of other content */
+}
+    </style>
+</head>
+<br>
+<div class="alert alert-danger" role="alert">
+    <span>welcome to our introduction</span>
+</div>
+<br>
+<div class="alert alert-primary" role="alert">
+    <span>welcome to our introduction</span>
+</div>
+<body>
+    <h4 style="text-align: center;">صورت جریان های نقدی</h4>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>شرح</th>
+                <th>1397</th>
+                <th>1398</th>
+                <th>1399</th>
+                <th>1400</th>
+                <th>1401</th>
+                <th>1402</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="title">
+                <td colspan="8">
+                    جريان­هاي نقدي حاصل از فعاليت‌هاي عملياتي
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    نقد حاصل از عمليات
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت ماليات بر درآمد
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>جريان ‌خالص ‌ورود‌ (خروج) ‌نقد حاصل از فعاليت‌هاي ‌عملياتي
+                </td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+            </tr>
+
+
+
+
+
+
+            <tr class="title">
+                <td colspan="8">جريان­هاي نقدي حاصل از فعاليت‌هاي سرمايه‌گذاري
+
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از فروش دارايي‌هاي ثابت مشهود
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي براي خريد دارايي‌هاي ثابت مشهود
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از فروش دارايي‌هاي غيرجاري نگهداري‌شده براي فروش
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از فروش دارايي‌هاي نامشهود
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي براي خريد دارايي‌هاي نامشهود
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+
+
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از فروش سرمايه‌گذاري‌هاي بلندمدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي براي تحصيل سرمايه‌گذاري‌هاي بلندمدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از فروش سرمايه‌گذاري در املاک
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي براي تحصيل سرمايه‌گذاري‌ در املاک
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از فروش سرمايه‌گذاري‌هاي کوتاه‌مدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>جمع دارايي‌هاي جارپرداخت‌هاي نقدي براي تحصيل سرمايه‌گذاري‌هاي کوتاه‌مدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت تسهيلات اعطايي به ديگران
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از استرداد تسهيلات اعطايي به ديگران
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از سود تسهيلات اعطايي به ديگران
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از سود‌ سهام
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از سود ساير سرمايه‌گذاري‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>جريان خالص ورود (خروج) نقد حاصل از فعاليت‌هاي سرمايه‌گذاري
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>جريان خالص ورود (خروج) نقد قبل از فعاليت‌هاي تامين مالي
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+
+            <tr class="title">
+                <td colspan="8">جريان­هاي نقدي حاصل از فعاليت‌هاي تامين مالي
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از افزايش سرمايه
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از صرف سهام
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از فروش سهام خزانه
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي براي خريد سهام خزانه
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از تسهيلات
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت اصل تسهيلات
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت سود تسهيلات
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>دريافت‌هاي نقدي حاصل از انتشار اوراق مشارکت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت اصل اوراق مشارکت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت سود اوراق مشارکت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>
+                    دريافت‌هاي نقدي حاصل از انتشار اوراق خريد دين
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت اصل اوراق خريد دين
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت سود اوراق خريد دين
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت اصل اقساط اجاره سرمايه‌اي
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت سود اجاره سرمايه‌اي
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پرداخت‌هاي نقدي بابت سود سهام
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>جريان خالص ورود (خروج) نقد حاصل از فعاليت‌هاي تامين مالي
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>خالص افزايش (کاهش) در موجودي نقد
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>مانده موجودي نقد در ابتداي سال
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>تاثير تغييرات نرخ ارز
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+
+            <tr>
+                <td>مانده موجودي نقد در پايان سال
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>معاملات غيرنقدي
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+
+        </tbody>
+    </table>
+    <!-- <button id="addRowBtn">Add Row</button> -->
+    <button id="saveDataBtn">Save Data</button>
+    <input type="file" id="myFile" name="filename">
+
+    <script>
+        document.querySelectorAll('td[contenteditable="true"]').forEach(function (cell) {
+            cell.addEventListener('input', function () {
+                if (!/^-?\d*\.?\d*$/.test(this.innerText)) {
+                    this.innerText = this.innerText.replace(/[^\d.-]/g, '');
+                }
+                calculateSum();
+            });
+        });
+        function calculateSum() {
+            for (let i = 1; i <= 6; i++) {
+                let sum = 0;
+                let cells = document.querySelectorAll(`td:nth-child(${i + 1})[contenteditable="true"]`);
+                cells.forEach(function (cell) {
+                    sum += parseFloat(cell.innerText) || 0;
+                });
+                document.getElementById(`sum-row-${i + 2}`).innerText = sum;
+            }
+        }
+        document.getElementById('addRowBtn').addEventListener('click', function () {
+            var newRow = '<tr><td>New Row, Cell 1</td>';
+            for (let i = 0; i < 6; i++) {
+                newRow += '<td contenteditable="true"></td>';
+            }
+            newRow += '</tr>';
+            document.querySelector('tbody').insertAdjacentHTML('beforeend', newRow);
+        });
+        document.getElementById('saveDataBtn').addEventListener('click', function () {
+            const tableData = [];
+            document.querySelectorAll('td[contenteditable="true"]').forEach(function (cell) {
+                tableData.push(cell.innerText);
+            });
+            fetch('/save_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ data: tableData })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Data saved successfully!');
+                    } else {
+                        alert('Failed to save data.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>
+{% endblock content %}

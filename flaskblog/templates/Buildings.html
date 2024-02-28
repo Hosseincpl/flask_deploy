@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="fa-ir" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Table with Sticky Header</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .title {
+            font-weight: bold;
+            background-color: lightblue;
+        }
+        table {
+
+    width: 80%; /* Adjust the width of the table as needed */
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+
+.title {
+    background-color: #f2f2f2; /* Gray background for title rows */
+}
+
+/* Apply alternate row colors for better readability */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #f2f2f2; /* Light gray background color on hover */
+}
+
+/* Style the editable cells */
+td[contenteditable="true"] {
+    background-color: #ffffff; /* White background color */
+    outline: none; /* Remove outline when editing */
+    cursor: text; /* Change cursor to text when editing */
+}
+
+/* Apply some padding to the editable cells for better spacing */
+td[contenteditable="true"] {
+    padding: 6px;
+}
+
+/* Apply special styles to the first column */
+td:first-child {
+    font-weight: bold;
+    background-color: #f2f2f2; /* Gray background color */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #dddddd;
+}
+
+.title {
+    background-color: #f2f2f2; /* Gray background for title rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row background color for better readability */
+}
+
+thead tr {
+    position: sticky; /* Make the first row sticky */
+    top: 0; /* Stick it to the top */
+    background-color: white; /* Background color of the sticky row */
+    z-index: 1; /* Ensure it stays on top of other content */
+}
+    </style>
+</head>
+<br>
+<div class="alert alert-danger" role="alert">
+    <span>welcome to our introduction</span>
+</div>
+<br>
+<div class="alert alert-primary" role="alert">
+    <span>welcome to our introduction</span>
+</div>
+<body>
+    <h4 style="text-align: center;">زمین و ساختمان</h4>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>شرح دارایی</th>
+                <th>زمین/ساختمان</th>
+                <th>بهای تمام شده</th>
+                <th>استهلاک انباشته</th>
+                <th>ارزش دفتری</th>
+                <th>نوع کاربری</th>
+                <th>وضعیت مالکیت</th>
+                <th>موقعیت مکانی</th>
+                <th>متراژ</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+
+        </tbody>
+    </table>
+    <!-- <button id="addRowBtn">Add Row</button> -->
+    <button id="saveDataBtn">Save Data</button>
+    <input type="file" id="myFile" name="filename">
+
+    <script>
+
+        document.getElementById('addRowBtn').addEventListener('click', function () {
+            var newRow = '<td contenteditable="true"></td>';
+            for (let i = 0; i < 8; i++) {
+                newRow += '<td contenteditable="true"></td>';
+            }
+            newRow += '</tr>';
+            document.querySelector('tbody').insertAdjacentHTML('beforeend', newRow);
+        });
+        document.getElementById('saveDataBtn').addEventListener('click', function () {
+            const tableData = [];
+            document.querySelectorAll('td[contenteditable="true"]').forEach(function (cell) {
+                tableData.push(cell.innerText);
+            });
+            fetch('/save_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ data: tableData })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Data saved successfully!');
+                    } else {
+                        alert('Failed to save data.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+
+</html>
+{% endblock content %}

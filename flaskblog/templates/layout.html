@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa-ir" , dir="rtl">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -20,55 +20,81 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark  bg-success fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">FAMEC Consultancy</a>
+          <a class="navbar-brand mr-4" href="/" style="font-family: 'Vazir', sans-serif;" >اندیشه فاخر</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">home</a>
-              <a class="nav-item nav-link" href="{{ url_for('about') }}">about us</a>
+              <a class="nav-item nav-link" href="{{ url_for('home') }}">خانه</a>
+              <a class="nav-item nav-link" href="{{ url_for('about') }}">درباره ما</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
-                <a class="nav-item nav-link" href="{{ url_for('account') }}">profile</a>
-                <a class="nav-item nav-link" href="{{ url_for('logout') }}">log out</a>
+              <a class="nav-item nav-link" href="{{ url_for('account') }}">پروفایل</a>
+              <a class="nav-item nav-link" href="{{ url_for('logout') }}">خروج</a>
               {% else %}
-                <a class="nav-item nav-link" href="{{ url_for('login') }}">log in</a>
-                <a class="nav-item nav-link" href="{{ url_for('register') }}">register</a>
+              <a class="nav-item nav-link" href="{{ url_for('login') }}">ورود</a>
+              <a class="nav-item nav-link" href="{{ url_for('register') }}">ثبت نام</a>
               {% endif %}
             </div>
           </div>
         </div>
       </nav>
     </header>
-    <main role="main" class="container">
+    
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark  bg-secondary ">
+        
+      <div class="container" style="padding-top: 7px;">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" style="background-color: mediumseagreen; ">
+            فهرست
+          </button>
+         <div class="dropdown-menu " aria-labelledby="dropdownMenuButton"style="text-align: right; border-radius: 1.25rem">
+            <a class="dropdown-item" href="{{ url_for('Introduction') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">مقدمه</a>
+            <a class="dropdown-item" href="{{ url_for('BalanceSheet') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">صورت سود و زیان </a>
+            <a class="dropdown-item" href="{{ url_for('IncomeStatement') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">صورت فعالیت مالی</a>
+            <a class="dropdown-item" href="{{ url_for('CashFlow') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">صورت جریان های نقدی</a>
+            <a class="dropdown-item" href="{{ url_for('ConsolidatedBalanceSheet') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">صورت سود و زیان تلفیقی</a>
+            <a class="dropdown-item" href="{{ url_for('ConsolidatedIncomeStatement') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">صورت وضعیت مالی  تلفیقی</a>
+            <a class="dropdown-item" href="{{ url_for('ConsolidatedCashFlow') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">صورت جریان های نقدی  تلفیقی</a>
+            <a class="dropdown-item" href="{{ url_for('Buildings') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">زمین و ساختمان </a>
+            <a class="dropdown-item" href="{{ url_for('Shareholders') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">جدول سهامداران</a>
+            <a class="dropdown-item" href="{{ url_for('BoardMembers') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">اعضای هئیت مدیره</a>
+            <a class="dropdown-item" href="{{ url_for('HumanResources') }}" style="color: rgb(38, 197, 62); font-family: 'Vazir', sans-serif;">منابع انسانی</a>
+          </div>
+            </div>
+            <span>welcome to our website</span>
+            </div>
+          </nav>
+    </header>
+    <main role="" class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12" style="padding-top: 10px;">
+          
+
+
+
+
+
+
+
+
+          
           {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
               {% for category, message in messages %}
                 <div class="alert alert-{{ category }}">
                   {{ message }}
                 </div>
+                
               {% endfor %}
             {% endif %}
           {% endwith %}
           {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
-          </div>
         </div>
       </div>
     </main>

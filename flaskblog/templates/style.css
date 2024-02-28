@@ -1,0 +1,85 @@
+.data-collection {
+    display: table;
+    width: 300px;
+    border-collapse: collapse;
+    table-layout: auto;
+    vertical-align:top;
+    margin-bottom: 15px;
+    border: 1px solid #CCCCCC;
+}
+
+.data-collection div {
+    display: table-row;
+}
+
+.data-collection div:nth-child(1) {
+    color: #FFFFFF;
+    background-color: #666666;
+    border: 1px solid #CCCCCC;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: auto;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.data-collection div:nth-child(1) span {
+    vertical-align: middle;
+    border-collapse: collapse;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+.data-collection div:nth-child(2n+2) {
+    color: #666666;
+    background-color: #F7F7F7;
+}
+
+.data-collection div:nth-child(2n+3) {
+    color: #666666;
+    background-color: #E8E8E8;
+}
+
+.data-collection div span {
+    display: table-cell;
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+.data-collection div span:nth-child(1) {
+    width: 200px;
+}
+
+.data-collection div span:nth-child(2) {
+    width: 400px;
+}
+
+.data-collection input[type="text"] {
+    width: 380px;
+}
+
+.data-collection input[type="number"] {
+    width: 150px;
+}
+
+.data-collection input[type="password"] {
+    width: 380px;
+}
+
+::-webkit-input-placeholder {
+    color: #B0B0B0;
+}
+
+::-moz-placeholder {
+    color: #B0B0B0;
+}
+
+:-ms-input-placeholder {
+    color: #B0B0B0;
+}
+
+:-moz-placeholder {
+    color: #B0B0B0;
+}

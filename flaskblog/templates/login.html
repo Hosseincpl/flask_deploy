@@ -1,12 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="content-section">
+<html lang="fa-ir" , dir="rtl">  
+    <div class="content-section" style="text-align:right">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Log In</legend>
+                <legend class="border-bottom mb-4">وارد شدن</legend>
                 <div class="form-group">
-                    {{ form.email.label(class="form-control-label") }}
+                    <!-- {{ form.email.label(class="form-control-label") }} -->
+                    <span>ایمیل</span>
                     {% if form.email.errors %}
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -19,7 +21,8 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.password.label(class="form-control-label") }}
+                    <!-- {{ form.password.label(class="form-control-label") }} -->
+                    <span>رمز عبور</span>
                     {% if form.password.errors %}
                         {{ form.password(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -31,22 +34,28 @@
                         {{ form.password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-                <div class="form-check">
-                    {{ form.remember(class="form-check-input") }}
-                    {{ form.remember.label(class="form-check-label") }}
+                <div class="form-check" >
+                    <span>من را به خاطر بسپار</span>
+                    
+                    {{ form.remember(class="form-check-input", style="margin-right:0.5rem;") }}
+
+                    <!-- {{ form.remember.label(class="form-check-label") }} -->
+                    
                 </div>
             </fieldset>
             <div class="form-group">
-                {{ form.submit(class="btn btn-outline-info") }}
+                {{ form.submit(class="btn btn-outline-info", value="وارد شدن ") }}
+
             </div>
             <small class="text-muted ml-2">
-                <a href="#">Forgot Password?</a>
+                <a href="#">فراموشی رمز عبور ؟</a>
             </small>
         </form>
     </div>
-    <div class="border-top pt-3">
+    <div class="border-top pt-3" style="float: right;">
         <small class="text-muted">
-            Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
+            آیا حساب کاربری ندارید ؟ <a class="ml-2" href="{{ url_for('register') }}">ثبت نام </a>
         </small>
     </div>
+    </html>
 {% endblock content %}

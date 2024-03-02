@@ -15,7 +15,7 @@ body {
   }
   
   h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #fffefe;
   }
   
   .bg-steel {
@@ -88,3 +88,42 @@ body {
   .account-heading {
     font-size: 2.5rem;
   }
+
+.button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0c854b; /* Blue color, you can change it */
+             /* White text color */
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        /* Hover effect */
+        .button:hover {
+            background-color: #0f522b; /* Darker blue on hover, you can change it */
+        }  
+
+  #backToTopBtn {
+        display: none; /* Initially hidden */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+        background-color: #0c854b;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    /* Style for the button on hover */
+    #backToTopBtn:hover {
+        background-color: #0f522b;
+    }       

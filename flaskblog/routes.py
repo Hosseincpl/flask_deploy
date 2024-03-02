@@ -61,12 +61,12 @@ def account():
 
 
 @app.route("/Introduction", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def Introduction():
     return render_template('Introduction.html', title='Introduction')
 
 @app.route("/BalanceSheet", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def BalanceSheet():
     
     # if request.method == 'POST':
@@ -126,46 +126,46 @@ def BalanceSheet():
     return render_template('BalanceSheet.html', title='BalanceSheet')
 
 @app.route("/IncomeStatement", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def IncomeStatement():
     return render_template('IncomeStatement.html', title='IncomeStatement')
 
 @app.route("/CashFlow", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def CashFlow():
     return render_template('CashFlow.html', title='CashFlow')
 
 @app.route("/ConsolidatedBalanceSheet", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def ConsolidatedBalanceSheet():
     return render_template('ConsolidatedBalanceSheet.html', title='ConsolidatedBalanceSheet')
 
 @app.route("/ConsolidatedIncomeStatement", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def ConsolidatedIncomeStatement():
     return render_template('ConsolidatedIncomeStatement.html', title='ConsolidatedIncomeStatement')
 
 @app.route("/ConsolidatedCashFlow", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def ConsolidatedCashFlow():
     return render_template('ConsolidatedCashFlow.html', title='ConsolidatedCashFlow')
 
 @app.route("/Buildings", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def Buildings():
     return render_template('Buildings.html', title='Buildings')
 
 @app.route("/Shareholders", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def Shareholders():
     return render_template('Shareholders.html', title='Shareholders')
 
 @app.route("/BoardMembers", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def BoardMembers():
     return render_template('BoardMembers.html', title='BoardMembers')
 
 @app.route("/HumanResources", methods=['GET', 'POST'])
-#@login_required
+@login_required
 def HumanResources():
     return render_template('HumanResources.html', title='HumanResources')

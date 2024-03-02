@@ -1,111 +1,572 @@
 {% extends "layout.html" %}
 {% block content %}
-<html lang="fa-ir", dir="rtl">
+<!DOCTYPE html>
+<html lang="fa-ir" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>User Data Table with Sticky Header</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        .title {
+            font-weight: bold;
+            background-color: lightblue;
+        }
+    </style>
 </head>
+<br>
+<div class="alert alert-danger" role="alert">
+    <span>welcome to our introduction</span>
+</div>
+<br>
+<div class="alert alert-primary" role="alert">
+    <span>welcome to our introduction</span>
+</div>
+
 <body>
-    
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-    
-            th,
-            td {
-                border: 1px solid black;
-                padding: 8px;
-                text-align: center;
-            }
-    
-            th {
-                background-color: lightgray;
-                position: sticky;
-                top: 0;
-                z-index: 1;
-            }
-    
-            tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-    
-            tr:nth-child(odd) {
-                background-color: #ffffff;
-            }
-    
-            .title {
-                font-weight: bold;
-                background-color: lightblue;
-            }
-        </style>
-    </head>
-    
-    <body>
-        <table>
-            <thead>
-                <tr>
-                    <th>Header 1</th>
-                    <th>Header 2</th>
-                    <th>Header 3</th>
-                    <th>Header 4</th>
-                    <th>Header 5</th>
-                    <th>Header 6</th>
-                    <th>Header 7</th>
-                    <th>Header 8</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="title">
-                    <td colspan="8">Category Title 1</td>
-                </tr>
-                <tr>
-                    <td>Row 1, Cell 1</td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                </tr>
+    <h4 style="text-align: center;">صورت وضعیت مالی</h4>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>شرح</th>
+                <th>1397</th>
+                <th>1398</th>
+                <th>1399</th>
+                <th>1400</th>
+                <th>1401</th>
+                <th>1402</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="title">
+                <td colspan="8">
+                    دارايي‌ها
+                </td>
+            </tr>
+            <tr class="title">
+                <td colspan="8">
+                    دارايي‌هاي غيرجاري
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    دارايي‌هاي ثابت مشهود
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>سرمايه‌گذاري در املاک </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>دارايي‌هاي نامشهود
+                </td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+                <td id="sum-row-3"></td>
+            </tr>
+            <tr>
+                <td>سرمايه‌گذاري‌هاي بلندمدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>دريافتني‌هاي بلندمدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>دارايي ماليات انتقالي
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>ساير دارايي‌ها
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td>جمع دارايي‌هاي غيرجاري
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+            </tr>
+
+            <!-- Repeat the above row for 9 more rows -->
+            <tr class="title">
+                <td colspan="8">دارايي‌هاي جاري
+
+                </td>
+            </tr>
+            <tr>
+                <td>سفارشات و پيش‌پرداخت‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>دريافتني‌هاي تجاري و ساير دريافتني‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>سرمايه‌گذاري‌هاي کوتاه‌مدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>موجودي نقد
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>دارايي‌هاي نگهداري شده براي فروش
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>جمع دارايي‌هاي جاري
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>جمع دارايي‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+
+
                 <!-- Repeat the above row for 9 more rows -->
-    
-                <tr class="title">
-                    <td colspan="8">Category Title 2</td>
-                </tr>
-                <tr>
-                    <td>Row 11, Cell 1</td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true"></td>
-                </tr>
-                <!-- Repeat the above row for 9 more rows -->
-    
-                <!-- Repeat the pattern for additional categories -->
-            </tbody>
-        </table>
-    <button id="saveDataBtn">Save Data</button>
-    <input type="file" id="myFile" name="filename">
-        <script>
-            document.querySelectorAll('td[contenteditable="true"]').forEach(function (cell) {
-                cell.addEventListener('input', function () {
-                    if (/[^0-9]/.test(this.innerText)) {
-                        this.innerText = this.innerText.replace(/[^0-9]/g, '');
-                    }
-                });
+            <tr class="title">
+                <td colspan="8">حقوق مالکانه و بدهي‌ها
+                </td>
+            </tr>
+            <tr class="title">
+                <td colspan="8">حقوق مالکانه
+                </td>
+            </tr>
+            <tr>
+                <td>سرمايه
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>افزايش سرمايه در جريان
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>صرف سهام
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>صرف سهام خزانه
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>اندوخته قانوني
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>ساير اندوخته‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>مازاد تجديدارزيابي دارايي‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>تفاوت تسعير ارز عمليات خارجي
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>سود(زيان) انباشته
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>سهام خزانه
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>جمع حقوق مالکانه
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+
+
+
+            <tr class="title">
+                <td colspan="8">بدهي‌ها
+                </td>
+            </tr>
+            <tr class="title">
+                <td colspan="8">بدهي‌هاي غيرجاري
+                </td>
+            </tr>
+            <tr>
+                <td>پرداختني‌هاي بلندمدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>تسهيلات مالي بلندمدت
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>بدهي ماليات انتقالي
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>ذخيره مزاياي پايان خدمت کارکنان
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>جمع بدهي‌هاي غيرجاري
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+
+            <tr class="title">
+                <td colspan="8">بدهي‌هاي جاري
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    پرداختني‌هاي تجاري و ساير پرداختني‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>ماليات پرداختني
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>سود سهام پرداختني
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>تسهيلات مالي
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>ذخاير
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td> </tr>
+            <tr>
+                <td>پيش‌دريافت‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>بدهي‌هاي ‌مرتبط ‌با دارايي‌هاي نگهداري‌‌شده براي ‌فروش
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>جمع بدهي‌هاي جاري
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>جمع بدهي‌ها
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+            <tr>
+                <td>جمع حقوق مالکانه و بدهي‌ها
+
+                </td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td>
+                <td contenteditable="true"></td ></tr>
+
+        </tbody>
+    </table>
+    <button id="backToTopBtn" onclick="scrollToTop()">Top</button>
+    <!-- <button id="addRowBtn">Add Row</button> -->
+    <button class="button" id="saveDataBtn">Save Data</button>
+    <input class="button" type="file" id="myFile" name="filename">
+    <script>
+        function scrollToTop() {
+                //document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+            }
+
+            // Show the button when scrolling down
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("backToTopBtn").style.display = "block";
+                } else {
+                    document.getElementById("backToTopBtn").style.display = "none";
+                }
+            }
+        document.querySelectorAll('td[contenteditable="true"]').forEach(function (cell) {
+            cell.addEventListener('input', function () {
+                if (!/^-?\d*\.?\d*$/.test(this.innerText)) {
+                    this.innerText = this.innerText.replace(/[^\d.-]/g, '');
+                }
+                calculateSum();
             });
-        </script>
-    </body>
-    
-    </html>
+        });
+        function calculateSum() {
+            for (let i = 1; i <= 6; i++) {
+                let sum = 0;
+                let cells = document.querySelectorAll(`td:nth-child(${i + 1})[contenteditable="true"]`);
+                cells.forEach(function (cell) {
+                    sum += parseFloat(cell.innerText) || 0;
+                });
+                document.getElementById(`sum-row-${i + 2}`).innerText = sum;
+            }
+        }
+        document.getElementById('addRowBtn').addEventListener('click', function () {
+            var newRow = '<tr><td>New Row, Cell 1</td>';
+            for (let i = 0; i < 6; i++) {
+                newRow += '<td contenteditable="true"></td>';
+            }
+            newRow += '</tr>';
+            document.querySelector('tbody').insertAdjacentHTML('beforeend', newRow);
+        });
+        document.getElementById('saveDataBtn').addEventListener('click', function () {
+            const tableData = [];
+            document.querySelectorAll('td[contenteditable="true"]').forEach(function (cell) {
+                tableData.push(cell.innerText);
+            });
+            fetch('/save_data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ data: tableData })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Data saved successfully!');
+                    } else {
+                        alert('Failed to save data.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
 </body>
+
 </html>
 
 {% endblock content %}

@@ -292,7 +292,7 @@ thead tr {
                 <td contenteditable="true"></td>
                 <td contenteditable="true"></td>
                 <td contenteditable="true"></td>
-                <td contenteditable="true"></td </tr>
+                <td contenteditable="true"></td> </tr>
             <tr>
                 <td>سال‌هاي قبل
                 </td>
@@ -301,7 +301,7 @@ thead tr {
                 <td contenteditable="true"></td>
                 <td contenteditable="true"></td>
                 <td contenteditable="true"></td>
-                <td contenteditable="true"></td </tr>
+                <td contenteditable="true"></td> </tr>
             <tr>
                 <td>سود(زيان) خالص عمليات در حال تداوم
                 </td>
@@ -430,11 +430,27 @@ thead tr {
                 <td contenteditable="true"></td> </tr>
         </tbody>
     </table>
+    <button id="backToTopBtn" onclick="scrollToTop()">Top</button>
     <!-- <button id="addRowBtn">Add Row</button> -->
-    <button id="saveDataBtn">Save Data</button>
-    <input type="file" id="myFile" name="filename">
+    <button class="button" id="saveDataBtn">Save Data</button>
+    <input class="button" type="file" id="myFile" name="filename">
 
     <script>
+        function scrollToTop() {
+               //> document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+            }
+
+            // Show the button when scrolling down
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("backToTopBtn").style.display = "block";
+                } else {
+                    document.getElementById("backToTopBtn").style.display = "none";
+                }
+            }
         document.querySelectorAll('td[contenteditable="true"]').forEach(function (cell) {
             cell.addEventListener('input', function () {
                 if (!/^-?\d*\.?\d*$/.test(this.innerText)) {

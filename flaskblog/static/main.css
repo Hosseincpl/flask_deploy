@@ -1,11 +1,15 @@
 @font-face {
-  font-family: 'Vazir';
-  src: url('path/to/Vazir-Regular.woff2') format('woff2'),
-    /* specify the path to your font files */
-    url('path/to/Vazir-Regular.woff') format('woff');
-  /* include additional formats if available */
+  font-family: Shabnam;
+  src: url('shabnam-font-v2.4.0/Shabnam-Bold.eot');
+  src: url('shabnam-font-v2.4.0/Shabnam-Bold.eot') format('Shabnam-opentype'),
+       url('shabnam-font-v2.4.0/Shabnam-Bold.woff') format('woff'),
+       url('shabnam-font-v2.4.0/Shabnam-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+* {
+  font-family: 'Shabnam';
 }
 
 body {

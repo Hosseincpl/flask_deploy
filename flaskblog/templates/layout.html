@@ -28,7 +28,7 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
+          <div class="collapse navbar-collapse mr-1" id="navbarToggle">
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{{ url_for('home') }}">خانه</a>
               <a class="nav-item nav-link" href="{{ url_for('about') }}">درباره ما</a>
@@ -52,26 +52,29 @@
       <nav class="navbar navbar-expand-md navbar-dark  bg-secondary ">
         
       <div class="container" style="padding-top: 45px;">
-        <div class="dropdown">
+        <div class="btn-group dropleft">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" style="background-color: mediumseagreen; ">
             فهرست 
           </button>
-         <div class="dropdown-menu " aria-labelledby="dropdownMenuButton"style="text-align: right; border-radius: 1.25rem">
+         <div class="dropdown-menu dropdown-menu-left" aria-labelledby="dropdownMenuButton"style="text-align: right; border-radius: 1.25rem">
             <a class="dropdown-item" href="{{ url_for('Introduction') }}" style="color: rgb(38, 197, 62); ">مقدمه</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ url_for('BalanceSheet') }}" style="color: rgb(38, 197, 62); ">صورت سود و زیان </a>
             <a class="dropdown-item" href="{{ url_for('IncomeStatement') }}" style="color: rgb(38, 197, 62); ">صورت وضعیت مالی</a>
             <a class="dropdown-item" href="{{ url_for('CashFlow') }}" style="color: rgb(38, 197, 62); ">صورت جریان های نقدی</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ url_for('ConsolidatedBalanceSheet') }}" style="color: rgb(38, 197, 62); ">صورت سود و زیان تلفیقی</a>
             <a class="dropdown-item" href="{{ url_for('ConsolidatedIncomeStatement') }}" style="color: rgb(38, 197, 62); ">صورت وضعیت مالی  تلفیقی</a>
             <a class="dropdown-item" href="{{ url_for('ConsolidatedCashFlow') }}" style="color: rgb(38, 197, 62); ">صورت جریان های نقدی  تلفیقی</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ url_for('Buildings') }}" style="color: rgb(38, 197, 62); ">زمین و ساختمان </a>
             <a class="dropdown-item" href="{{ url_for('Shareholders') }}" style="color: rgb(38, 197, 62); ">جدول سهامداران</a>
             <a class="dropdown-item" href="{{ url_for('BoardMembers') }}" style="color: rgb(38, 197, 62); ">اعضای هئیت مدیره</a>
             <a class="dropdown-item" href="{{ url_for('HumanResources') }}" style="color: rgb(38, 197, 62); ">منابع انسانی</a>
           </div>
             </div>
-            <span>welcome to our website</span>
+            <span>کاربر گرامی خوش آمدید</span>
             </div>
           </nav>
     </header>

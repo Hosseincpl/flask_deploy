@@ -13,7 +13,9 @@
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
+                                <span>
+                                    ایمیل نامعتبر است
+                                </span>
                             {% endfor %}
                         </div>
                     {% else %}
@@ -27,7 +29,9 @@
                         {{ form.password(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
+                                <span>
+                                    رمز عبور اشتباه است
+                                </span>
                             {% endfor %}
                         </div>
                     {% else %}

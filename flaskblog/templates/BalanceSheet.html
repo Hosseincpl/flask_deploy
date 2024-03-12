@@ -335,7 +335,9 @@ thead tr {
                 <td contenteditable="true"></td> </tr>
         </tbody>
     </table>
-    <p class="text-right text-dark h-5 mt-3">لطفا اسناد و مدارک موجود را در قسمت زیر آپلود کنید.</p>
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<p class="text-right text-dark h-5 mt-3">لطفا اسناد و مدارک موجود را در قسمت زیر آپلود کنید.</p>
     <button id="backToTopBtn" onclick="scrollToTop()">بالای صفحه</button> 
     <div class="custom-file mt-3 mb-3">
         <input type="file" class="custom-file-input" id="myFile">
@@ -352,16 +354,15 @@ thead tr {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="confirmationModalLabel">تأیید ارسال فرم</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body text-right">
         آیا از ارسال فرم مطمئن هستید؟
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">ویرایش</button>
+        <button type="button" class="btn btn-secondary ml-2" data-dismiss="modal">ویرایش</button>
         <button type="button" class="btn btn-primary" id="confirmFormBtn">تأیید</button>
       </div>
     </div>

@@ -103,22 +103,15 @@ tbody tr:nth-child(even) {
 
 thead tr {
     position: sticky; /* Make the first row sticky */
-    top: 0; /* Stick it to the top */
+    top: 100px; /* Stick it to the top */
     background-color: white; /* Background color of the sticky row */
     z-index: 1; /* Ensure it stays on top of other content */
 }
     </style>
 </head>
 <br>
-<div class="alert alert-danger" role="alert">
-    <span>welcome to our introduction</span>
-</div>
-<br>
-<div class="alert alert-primary" role="alert">
-    <span>welcome to our introduction</span>
-</div>
 <body>
-    <h4 style="text-align: center;">صورت جریان های نقدی</h4>
+    <h2 style="text-align: center;" class="text-dark mt-3">صورت جریان های نقدی</h2>
     <br><br>
     <table>
         <thead>
@@ -171,19 +164,11 @@ thead tr {
                 <td id="sum-row-3"></td>
             </tr>
 
-
-
-
-
-
             <tr class="title">
                 <td colspan="8">جريان­هاي نقدي حاصل از فعاليت‌هاي سرمايه‌گذاري
 
                 </td>
             </tr>
-
-
-
 
             <tr>
                 <td>دريافت‌هاي نقدي حاصل از فروش دارايي‌هاي ثابت مشهود
@@ -569,12 +554,44 @@ thead tr {
 
         </tbody>
     </table>
-    <button id="backToTopBtn" onclick="scrollToTop()">Top</button>
-    <!-- <button id="addRowBtn">Add Row</button> -->
-    <button class="button" id="saveDataBtn">Save Data</button>
-    <input class="button" type="file" id="myFile" name="filename">
+    <p class="text-right text-dark h-5 mt-3">لطفا اسناد و مدارک موجود را در قسمت زیر آپلود کنید.</p>
+    <button id="backToTopBtn" onclick="scrollToTop()">بالای صفحه</button> 
+    <div class="custom-file mt-3 mb-3">
+        <input type="file" class="custom-file-input" id="myFile">
+        <label class="custom-file-label" for="myFile">انتخاب فایل</label>
+    </div>
+<!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mt-2 mb-3" data-toggle="modal" data-target="#confirmationModal">
+    ارسال فرم
+</button>
 
-    <script>
+<!-- Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-right">
+        آیا از ارسال فرم مطمئن هستید؟
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary ml-2" data-dismiss="modal">ویرایش</button>
+        <button type="button" class="btn btn-primary" id="confirmFormBtn">تأیید</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.getElementById('confirmFormBtn').addEventListener('click', function() {
+        // Close the modal when the "تأیید" (Confirm) button is clicked
+        $('#confirmationModal').modal('hide');
+    });
+
         function scrollToTop() {
               //  document.body.scrollTop = 0; // For Safari
                 document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera

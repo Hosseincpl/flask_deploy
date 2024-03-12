@@ -137,4 +137,6 @@ body {
       height: auto;
       margin-left: 10px;
   }
-  
+  html, body {
+    height: 100%;
+}
